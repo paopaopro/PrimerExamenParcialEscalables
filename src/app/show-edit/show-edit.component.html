@@ -1,0 +1,30 @@
+<div *ngIf="show">
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Nombre:</label>
+      <input formControlName="name">
+    </div>
+    <div>
+      <label>Año:</label>
+      <input type="number" formControlName="year">
+    </div>
+    <div>
+      <label>Episodios:</label>
+      <input type="number" formControlName="episodes">
+    </div>
+    <div>
+      <label>Imagen URL:</label>
+      <input formControlName="image">
+    </div>
+    <div>
+      <label>Descripción:</label>
+      <textarea formControlName="description"></textarea>
+    </div>
+    <div>
+      <label>Género:</label>
+      <input formControlName="genre">
+    </div>
+    <button type="submit">Guardar</button>
+    <button type="button" (click)="onCancel()">Cancelar</button>
+  </form>
+</div>

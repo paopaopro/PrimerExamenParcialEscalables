@@ -1,0 +1,11 @@
+<div class="container">
+  <app-show-form (createElement)="createElement($event)"></app-show-form>
+
+  <app-show-filter (onOrderByABC)="orderByABC()" (onOrderByYear)="orderByYear()" (onOrderByEpisode)="orderByEpisode()" ></app-show-filter>
+
+  <app-show-edit *ngIf="selectedShow" [show]="selectedShow" (updateShow)="updateShow($event)" (cancelEdit)="cancelEdit()"></app-show-edit>
+  
+  <div class="container d-flex">
+      <app-show-card *ngFor="let show of shows" [show]="show" (deleteCard)="deleteElement($event)" (editCard)="selectShow($event)"></app-show-card>
+  </div>
+</div>
